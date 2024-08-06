@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Information Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #495057;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 110vh;
+            margin: 60px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px; /* Adjust width as needed */
+        }
+        h1 {
+            color: #ff0000;
+            font-size: 2rem;
+            margin-bottom: 2.7rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .form-label {
+            font-weight: 500;
+        }
+        .form-control {
+            border-radius: 0.5rem;
+            border: 1px solid #ced4da;
+            box-shadow: none;
+            transition: border-color 0.2s;
+            width: 100%; /* Ensures full width within its parent */
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+        }
+        .btn-primary {
+            background-color: #28a745; /* Green button */
+            border-color: #28a745;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #218838; /* Darker green on hover */
+            border-color: #1e7e34;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head> 
+
+<body>
+    <div class="container">
+        <h1 class="mb-4">Laptop Price Prediction Form</h1>
+        <form action="{{ url_for("prediction") }}" method='post'>
+            <div class="mb-3">
+                <label for="brand" id="brand" class="form-label"required>Brand Nmae : </label>
+                <select name="brand" >
+                    <option value="1">HP</option>
+                    <option value="2">Acer</option>
+                    <option value="3">Lenovo</option>
+                    <option value="4">Apple</option>
+                    <option value="5">Dell</option>
+                    <option value="6">Asus</option>
+                    <option value="7">Samsung</option>
+                    <option value="8">Ultimus</option>
+                    <option value="9">MSI</option>
+                    <option value="10">Infinix</option>
+                    <option value="11">Wings</option>
+                    <option value="12">Honor</option>
+                    <option value="13">Zebronics</option>
+                    <option value="14">Xiaomi</option>
+                    <option value="15">iBall</option>
+                    <option value="16">Chuwi</option>
+                    <option value="17">Realme</option>
+                    <option value="18">Avita</option>
+                    <option value="19">Walker</option>
+                    <option value="20">Huawei</option>
+                    <option value="21">Tecno</option>
+                    <option value="22">Gigabyte</option>
+                    <option value="23">Vaio</option>
+                    <option value="24">Microsoft</option>
+                    <option value="25">Fujitsu</option>
+                    <option value="26">LG</option>
+                    <option value="27">Ninkear</option>
+                    <option value="28">Razer</option>
+                    <option value="28">AXL</option>
+                </select>
+            </div>
+            <br>
+            <div class="mb-3">
+                <label>Specification Rating : </label>
+                <input type="number" name="spec_rating" step="10" required>
+            </div>
+            <br>
+            <div class="mb-3">
+            
+                <label for="processor" class="form-label">Processor : </label>
+                <select name="processor">
+                    <option value="1">Gen model</option>
+                    <option value="2">Apple's processor</option>
+                    <option value="3">Intel's processor</option>
+                </select>
+                
+            </div>
+            <br>
+            <div class="mb-3">  
+                <label for="ram" class="form-label">RAM (GB) : </label>
+                <input type="number" name="Ram" step="2" required>
+            </div>   <br>
+            <div class="mb-3">
+                <label for="rom" name="ROM">ROM (GB) : </label>
+                
+                <select>
+                    <option value="512">512</option>
+                    <option value="256">256</option>
+                    <option value="128">128</option>
+                    <option value="1">1</option>
+                    <option value="32">32</option>
+                    <option value="2">2</option>
+                    <option value="64">64</option>
+                </select>
+            </div>   <br>
+            <div class="mb-3">
+               
+                <label for="rom_type" name="ROM-type">ROM Type : </label>
+                <select>
+                <option value="0">SSD</option>
+                <option value="1">Hard-Disk</option>
+            </select>
+                
+            </div>   <br>
+            <div class="mb-3">
+                <label for="display_size" class="form-label">Display Size (inches) : </label>
+                <input type="number" name="display_size" id="display_size"  required>
+            </div>   <br>
+            <div class="mb-3">
+                <label for="resolution_width"  name="resolution_width">Resolution Width : </label>
+                <input type="number"  id="resolution_width" required>
+            </div>   <br>
+            <div class="mb-3">
+                <label for="resolution_height" class="form-label">Resolution Height : </label>
+                <input type="number" name="resolution_height" id="resolution_height" required>
+            </div>   <br>
+            <div class="mb-3">
+                
+                <label for="os" name="OS">Operating System : </label>
+                <select>
+                    <option value="1">Windows</option>
+                    <option value="2">Mac</option>
+                    <option value="3">Ubantu/DOS/Chrome</option>
+                </select>
+            </div>   <br>
+            <div class="mb-3">
+                <label for="warranty" name="warranty">Warranty (Years) : </label>
+                <select>
+                    <option value="1">1</option>
+                    <option value="0">0</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>   <br>
+            <div class="mb-3">
+               
+                <label for="cpu_name" name="CPU Name">CPU Name : </label>
+               <select>
+                <option value="1">Hexa Core</option>
+                <option value="3">Dual Core</option>
+                <option value="4">12 Cores</option>
+                <option value="14">16 Cores</option>
+                <option value="5">Octa Core</option>
+                <option value="6">10 Cores</option>
+                <option value="7">Quad Core</option>
+                <option value="8">14 Cores</option>
+                <option value="16">10 Cores</option>
+                <option value="10">24 Cores</option>
+                <option value="13">5 Cores</option>
+                
+               </select>
+            </div>   <br>
+            <div class="mb-3">
+                <label for="gpu_brand" name="GPU_brand">GPU Brand : </label>
+             <select>
+                <option value="1">4GB</option>
+                <option value="2">Intel</option>
+                <option value="3">Apple</option>
+                <option value="4">6GB</option>
+                <option value="5">AMD</option>
+                <option value="6">8GB</option>
+                <option value="7">16GB</option>
+                <option value="8">10-Core</option>
+                <option value="9">Integrated</option>
+                <option value="10">NVIDIA</option>
+                <option value="11">12GB</option>
+                <option value="12">16-core</option>
+                <option value="13">2GB</option>
+             </select>
+            </div>   <br>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" style="margin:8px">Submit</button>   <br>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+</body>
+</html>
